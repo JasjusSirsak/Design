@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janitor AI Profile CSS Workshop</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<div class="content-wrap">
+
+  <!-- HEADER -->
+  <header class="pt-10 pb-6 fade-up">
+    <div class="flex items-start justify-between flex-wrap gap-4">
+      <div>
+        <div class="tag mb-3" style="background:var(--accent-dim);color:var(--accent);border:1px solid rgba(0,229,199,.2)">
+          <i class="fa-solid fa-wand-magic-sparkles" style="font-size:9px"></i> Workshop Interaktif
+        </div>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.15;letter-spacing:-0.5px">
+          Profile CSS<br><span style="color:var(--accent)">Janitor AI</span>
+        </h1>
+        <p style="color:var(--muted);margin-top:10px;max-width:520px;font-size:14px;line-height:1.6">
+          Pelajari cara mengubah tampilan profil Janitor AI dengan CSS kustom. Tulis kode di kiri, lihat hasilnya langsung di kanan.
+        </p>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+        <span style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace">v2.0 — pp- classes</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- NOTICE BAR: pp- class system -->
+  <div class="fade-up fade-d1" style="margin-bottom:16px;padding:14px 18px;background:rgba(240,160,48,.05);border:1px solid rgba(240,160,48,.15);border-radius:8px;display:flex;align-items:flex-start;gap:12px">
+    <i class="fa-solid fa-triangle-exclamation" style="color:var(--warm);margin-top:2px;flex-shrink:0"></i>
+    <div style="font-size:12.5px;line-height:1.6">
+      <span style="color:var(--warm);font-weight:600">Selector pp- yang stabil:</span>
+      <span style="color:var(--muted)"> Semua CSS di editor ini menargetkan class </span>
+      <code class="code-inline">pp-</code>
+      <span style="color:var(--muted)"> yang resmi dari Janitor AI — bukan class Chakra UI </span>
+      <code class="code-inline" style="color:var(--danger);border-color:rgba(255,68,102,.15);background:rgba(255,68,102,.06)">.css-XXXX</code>
+      <span style="color:var(--muted)"> yang berubah tiap update. Daftar lengkap: </span>
+      <a href="https://cssforjai.ju.mp/#profpage" target="_blank" rel="noopener" style="color:var(--warm);text-decoration:underline;font-weight:500">cssforjai.ju.mp</a>
+    </div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="fade-up fade-d1" style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+    <span style="font-size:11px;color:var(--muted);font-weight:500;margin-right:4px">Template:</span>
+    <button class="tpl-btn" data-tpl="cyberpunk">Cyberpunk Neon</button>
+    <button class="tpl-btn" data-tpl="gothic">Gothic Elegance</button>
+    <button class="tpl-btn" data-tpl="glass">Glassmorphism</button>
+    <button class="tpl-btn" data-tpl="terminal">Terminal Green</button>
+    <button class="tpl-btn" data-tpl="aurora">Aurora</button>
+    <div style="flex:1;min-width:20px"></div>
+    <button class="act-btn primary" id="btn-copy" aria-label="Salin CSS"><i class="fa-regular fa-clipboard"></i> Salin CSS</button>
+    <button class="act-btn danger" id="btn-reset" aria-label="Reset editor"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+  </div>
+
+  <!-- BG IMAGE INPUT -->
+  <div class="fade-up fade-d2" style="margin-bottom:16px;display:flex;gap:8px;align-items:center;max-width:700px">
+    <label style="font-size:11px;color:var(--muted);font-weight:500;white-space:nowrap"><i class="fa-solid fa-image" style="margin-right:4px;color:var(--warm)"></i>Background URL:</label>
+    <input type="text" class="url-input" id="bg-url" placeholder="https://picsum.photos/seed/darkcity/1920/1080" aria-label="URL gambar background">
+    <button class="act-btn" id="btn-apply-bg" style="white-space:nowrap">Terapkan</button>
+  </div>
+
+  <!-- WORKSPACE -->
+  <div class="workspace-grid fade-up fade-d3" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;height:clamp(420px,52vh,600px);margin-bottom:40px">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column">
+      <div class="panel-label"><span class="dot"></span> CSS Editor</div>
+      <div class="editor-wrap" style="flex:1;overflow:hidden">
+        <textarea class="css-editor" id="css-editor" spellcheck="false" aria-label="Editor CSS"></textarea>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div class="panel-label"><span class="dot" style="background:var(--warm);box-shadow:0 0 8px var(--warm-dim)"></span> Live Preview</div>
+      <div class="browser-frame" style="flex:1">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background:#ff5f57"></div>
+          <div class="browser-dot" style="background:#ffbd2e"></div>
+          <div class="browser-dot" style="background:#28ca41"></div>
+          <div class="browser-url">janitorai.com/profile/Isakjasjus</div>
+        </div>
+        <div class="browser-body">
+          <iframe id="preview-frame" title="Preview Profil Janitor AI"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEKNIK & TRIK -->
+  <section style="margin-bottom:40px">
+    <div class="tag mb-4" style="background:var(--warm-dim);color:var(--warm);border:1px solid rgba(240,160,48,.2)">
+      <i class="fa-solid fa-lightbulb" style="font-size:9px"></i> Teknik & Trik (pp- Selectors)
+    </div>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:16px;max-width:600px;line-height:1.6">
+      Klik kartu untuk menambahkan snippet. Semua selector menggunakan class <code class="code-inline">pp-</code> yang stabil — aman dipaste ke Janitor AI.
+    </p>
+    <div id="tech-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px"></div>
+  </section>
+
+  <!-- ADVANCED: @IMPORT -->
+  <section style="margin-bottom:40px">
+    <div class="tag mb-4" style="background:rgba(255,68,102,.1);color:var(--danger);border:1px solid rgba(255,68,102,.2)">
+      <i class="fa-solid fa-bolt" style="font-size:9px"></i> Advanced: @import & Third-Party Injection
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px">
+      <div class="info-block">
+        <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent);border-radius:0 2px 2px 0"></div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px">
+          <i class="fa-solid fa-link" style="color:var(--accent);font-size:13px"></i> Apa itu @import?
+        </h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7">
+          <span class="code-inline">@import url('...')</span> memuat stylesheet eksternal ke dalam kode kamu. Creator Ko-Fi menggunakannya supaya pembeli cukup menempelkan <strong style="color:var(--fg)">satu baris</strong> untuk desain kompleks.
+        </p>
+        <div style="margin-top:12px;background:var(--bg);border-radius:8px;padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--accent);border:1px solid var(--border);line-height:1.6;overflow-x:auto">
+@import url('https://raw.githubusercontent.com/<br>&nbsp;&nbsp;username/repo/main/style.css');<br><br>/* File style.css HARUS menggunakan<br>&nbsp;&nbsp;class pp- juga, bukan .css-XXXX */
+        </div>
+      </div>
+      <div class="info-block">
+        <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--warm);border-radius:0 2px 2px 0"></div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px">
+          <i class="fa-brands fa-github" style="color:var(--warm);font-size:13px"></i> Kenapa GitHub Raw / Stylus?
+        </h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7">
+          GitHub <strong style="color:var(--fg)">Raw URL</strong> mengirim CSS murni tanpa HTML wrapper. Stylus adalah ekstensi browser penyimpan CSS kustom. Keduanya dipakai karena mengirim file text plain.
+        </p>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-size:11px;padding:3px 8px;border-radius:4px;background:rgba(240,160,48,.08);color:var(--warm);border:1px solid rgba(240,160,48,.15)">raw.githubusercontent.com</span>
+          <span style="font-size:11px;padding:3px 8px;border-radius:4px;background:rgba(240,160,48,.08);color:var(--warm);border:1px solid rgba(240,160,48,.15)">gist.github.com</span>
+          <span style="font-size:11px;padding:3px 8px;border-radius:4px;background:rgba(240,160,48,.08);color:var(--warm);border:1px solid rgba(240,160,48,.15)">pastebin.com/raw</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--danger);border-radius:0 2px 2px 0"></div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px">
+          <i class="fa-solid fa-triangle-exclamation" style="color:var(--danger);font-size:13px"></i> Sanitasi & Specificity
+        </h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7">
+          Janitor AI <strong style="color:var(--fg)">menyaring</strong> CSS yang dianggap berbahaya. Mereka juga membungkus CSS bawaan dengan <strong style="color:var(--fg)">specificity tinggi</strong> (ID selector). Gunakan <span class="code-inline">!important</span> di setiap deklarasi.
+        </p>
+        <div style="margin-top:12px;padding:10px 14px;border-radius:8px;background:rgba(255,68,102,.06);border:1px solid rgba(255,68,102,.12);font-size:12px;color:rgba(255,68,102,.8);line-height:1.6">
+          <i class="fa-solid fa-circle-info" style="margin-right:4px"></i>
+          <strong>Wajib:</strong> Selalu gunakan <code style="font-family:'JetBrains Mono',monospace;background:rgba(255,68,102,.1);padding:1px 4px;border-radius:3px">!important</code> pada setiap properti. Tanpa itu, CSS bawaan Janitor akan menang.
+        </div>
+      </div>
+      <div class="info-block">
+        <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:#a78bfa;border-radius:0 2px 2px 0"></div>
+        <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px">
+          <i class="fa-solid fa-font" style="color:#a78bfa;font-size:13px"></i> @import Font Eksternal
+        </h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7">
+          <span class="code-inline">@import</span> untuk Google Fonts biasanya <strong style="color:var(--fg)">tidak diblokir</strong> CSP. Ini trik paling aman dan reliable untuk memuat font kustom.
+        </p>
+        <div style="margin-top:12px;background:var(--bg);border-radius:8px;padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#a78bfa;border:1px solid var(--border);line-height:1.6;overflow-x:auto">
+@import url('https://fonts.googleapis.com/<br>&nbsp;&nbsp;css2?family=Orbitron:wght@400;700');<br><br>.pp-uc-background h2 {<br>&nbsp;&nbsp;font-family: 'Orbitron', sans-serif<br>&nbsp;&nbsp;&nbsp;&nbsp;!important;<br>}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENSI CLASS pp- -->
+  <section style="margin-bottom:60px">
+    <div class="tag mb-4" style="background:rgba(139,92,246,.1);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">
+      <i class="fa-solid fa-crosshairs" style="font-size:9px"></i> Peta Selector pp-
+    </div>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:6px;line-height:1.6">
+      Hanya gunakan selector berikut saat menulis CSS untuk Janitor AI. Hindari class <code class="code-inline" style="color:var(--danger);border-color:rgba(255,68,102,.15);background:rgba(255,68,102,.06)">.css-XXXX</code> sama sekali.
+    </p>
+    <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+      <span style="font-size:11px;display:flex;align-items:center;gap:4px"><span class="stab stab-ok">STABIL</span> <span style="color:var(--muted)">pp- direct</span></span>
+      <span style="font-size:11px;display:flex;align-items:center;gap:4px"><span class="stab stab-warn">STRUKTUR</span> <span style="color:var(--muted)">pp- parent + child</span></span>
+      <span style="font-size:11px;display:flex;align-items:center;gap:4px"><span class="stab stab-no">CEK</span> <span style="color:var(--muted)">verifikasi di cssforjai.ju.mp</span></span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden">
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border)">
+              <th style="text-align:left;padding:12px 16px;color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:1px">Selector</th>
+              <th style="text-align:left;padding:12px 16px;color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:1px">Fungsi</th>
+              <th style="text-align:left;padding:12px 16px;color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:1px">Tipe</th>
+              <th style="text-align:left;padding:12px 16px;color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:1px">Properti Utama</th>
+            </tr>
+          </thead>
+          <tbody id="ref-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast"><i class="fa-solid fa-check"></i> <span id="toast-msg"></span></div>
+
+<script src="script.js"></script>
+</body>
+</html>
