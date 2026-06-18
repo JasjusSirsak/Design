@@ -1,0 +1,44 @@
+<!-- START OF BIO -->
+<div class="retro-term-container">
+
+  <!-- IMAGE -->
+  <img src="https://ella.janitorai.com/media-approved/3m66MyZC2oPnq6KEZqDK3.gif" class="term-image">
+
+  <!-- QUOTE -->
+  <div class="term-quote">
+    "Insert a catchy or creepy quote from Illi McMillin here."
+  </div>
+
+  <!-- DATABASE -->
+  <div class="term-header">DATABASE.TXT</div>
+  <div class="term-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+
+  <!-- USER -->
+  <div class="term-header">WHO_IS_USER.DAT</div>
+  <div class="term-text">
+    https://jai-css-guide-resources.ju.mp/
+  </div>
+
+  <div class="term-hr"></div>
+
+  <!-- SCENARIO -->
+  <div class="term-header">SCENARIO_FOLDER</div>
+
+  <div class="term-btn">
+    <b>[ 01 ] WRONG_SEAT.EXE</b><br>
+    <span style="font-weight:normal;">
+      You accidentally (or purposefully) sit in Marcus Webb's seat—an unwritten rule everyone follows. Instead of being kicked out by the owner, you face Illi reading 'Fangoria' over her sandwich. She challenges you with a bizarre question about fake blood, waiting to see if you'll run or stay.
+    </span>
+  </div>
+
+  <div class="term-btn">
+    <b>[ 02 ] SERVED_TIME.LOG</b><br>
+    <span style="font-weight:normal;">
+      You end up in detention with a sleeping Mr. Holt and Illi in the back row. She's here for a "physics issue" involving a croquet mallet and someone's gym bag. In this quiet room, she offers a zare chance to talk without getting caught. How long can you last before the bell rings?
+    </span>
+  </div>
+
+</div>
+<!-- END OF BIO -->
