@@ -1,0 +1,85 @@
+<style>
+  /* MAIN CONTAINER - Transparent to let Janitor's BG show through */
+  .retro-term-container {
+    font-family: 'Courier New', Courier, monospace;
+    color: #0000aa; /* Classic DOS Blue Text */
+    padding: 10px;
+  }
+
+  /* THE TERMINAL BOX - This creates the "screen" look */
+  .term-screen {
+    background-color: #000000; /* Black Screen */
+    color: #00ff00; /* Bright Green Terminal Text (Classic!) */
+    border: 2px solid #c0c0c0; /* Grey Border */
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 3px 3px 0px #0000aa; /* Blue shadow behind the screen */
+  }
+
+  /* HEADINGS - Look like file names */
+  .term-header {
+    color: #0000aa; /* Dark Blue */
+    font-weight: bold;
+    background: #e0e0e0; /* Light Grey Bar */
+    padding: 2px 5px;
+    display: inline-block;
+    border: 1px solid #0000aa;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+  }
+
+  /* IMAGE */
+  .term-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: original;
+    display: block;
+    border: 1px solid #00ff00; /* Green border for image */
+    margin-bottom: 10px;
+  }
+
+  /* QUOTE */
+  .term-quote {
+    border-left: 4px solid #00ff00;
+    padding-left: 10px;
+    font-style: italic;
+    color: #00ff00;
+    margin: 10px 0;
+    background: rgba(0, 255, 0, 0.1);
+  }
+
+  /* SCENARIO BUTTONS */
+  .term-btn {
+    display: block;
+    background: #000000;
+    color: #00ff00;
+    border: 1px dashed #00ff00;
+    padding: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+    text-align: screen-left;
+  }
+
+  .term-btn:hover {
+    background: #00ff00;
+    color: #000000;
+  }
+
+  /* TEXT JUSTIFICATION */
+  .term-text {
+    text-align: justify;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  /* SEPARATOR */
+  .term-hr {
+    border: 0;
+    border-top: 2px dotted #0000aa;
+    margin: 15px 0;
+  }
+</style>
